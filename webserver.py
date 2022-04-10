@@ -4,7 +4,7 @@ from threading import Thread
 
 class WebServer:
 
-    def __init__(self, address='develaraujo.com.br', port=6789):
+    def __init__(self, address='localhost', port=6789):
         self.port = port
         self.address = address
 
@@ -30,7 +30,7 @@ class HttpRequest(Thread):
         self.CRLF = '\r\n'
         self.buffer_size = 4096
         self.arquivos = ['index.html','main.js','mickey-mouse.png','pernalonga.jpeg','piupiu-e-frajola.png','tom-e-jerry.png']
-        self.arquivosNotFound = ['notFound.html','not-found.js']
+        self.arquivosNotFound = ['notFound.html']
 
     def run(self):
         request = self.conn.recv(self.buffer_size)
